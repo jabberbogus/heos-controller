@@ -86,7 +86,7 @@ class HeosCommand {
         $discovery = new HeosDiscovery();
         $devices = $discovery->discover();
         if (empty($devices)) {
-            throw new Exception("No HEOS devices found on the local network.");
+            throw new \Exception("No HEOS devices found on the local network.");
         }
         foreach ($devices as $ip) {
             echo "- $ip\n";

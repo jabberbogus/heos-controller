@@ -1,7 +1,6 @@
 <?php
 namespace HeosApp;
 
-use HeosApp\HeosException;
 
 class HeosClient {
     private string $host;
@@ -48,7 +47,7 @@ class HeosClient {
         }
 
         if ($decoded['heos']['result'] === 'fail') {
-            throw HeosException::fromHeosMessage($decoded['heos']['message'] ?? '');
+            throw new \Exception("HEOS command failed: " . $decoded['heos']['message']);
         }
 
         return $decoded;
