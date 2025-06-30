@@ -37,6 +37,7 @@ class HeosRunner
         'play' => 'set_play',
         'start' => 'set_play',
         'volume' => 'set_volume',
+        'vol' => 'set_volume'
     ];
 
     public string $ip;
@@ -224,7 +225,7 @@ class HeosRunner
 
      public function executeComplexCommands(string $command, HeosClient $client, array $players = null, int $arg = 0): void
     {
-        // Validate command
+
         if (!in_array($command, $this->allowedCommands['complex_commands'])) {
             echo "Invalid command: $command\n";
             echo "Available commands: " . implode(', ', $this->allowedCommands['complex_commands']) . "\n";
@@ -249,7 +250,7 @@ class HeosRunner
                 break;
             default:
                 echo "Unknown complex command: $command\n";
-                echo "Available commands: " . implode(', ', $this->allowedCommands['complex_commands    ']) . "\n";
+                echo "Available commands: " . implode(', ', $this->allowedCommands['complex_commands']) . "\n";
                 break;
         }
     }

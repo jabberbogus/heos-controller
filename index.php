@@ -14,6 +14,7 @@ try {
 
     if ($command['type'] === 'system') {
         $runner->executeSystemCommands($command['command']);
+        exit(0);
     }
 
     if (!file_exists(_CACHE_FILE_)) {
